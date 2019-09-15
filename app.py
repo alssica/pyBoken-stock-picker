@@ -26,7 +26,7 @@ def bokeh_plot(df):
 
     p = figure(title="Drag to change range", plot_height=300, plot_width=700, tools="xpan", toolbar_location=None,
                x_axis_type="datetime", x_axis_location="below", sizing_mode="scale_width",
-               background_fill_color="#f5f5f5", x_range=(dates[800], dates[1000]))
+               background_fill_color="#f5f5f5", x_range=(dates[len(dates)-300], dates[len(dates)-1]))
 
     hover_tool = HoverTool(
         tooltips=[
