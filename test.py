@@ -2,6 +2,7 @@ from bokeh.plotting import figure
 from bokeh.models import ColumnDataSource, RangeTool, HoverTool, CrosshairTool
 from bokeh.layouts import column
 from bokeh.io import show
+from bokeh.embed import components
 import requests
 import json
 import pandas as pd
@@ -82,4 +83,9 @@ select.ygrid.grid_line_color = "white"
 select.add_tools(range_tool)
 select.toolbar.active_multi = range_tool
 
-show(column(p, select))
+script, div = components(p)
+ids = div.split("\"")
+div_id = ids[3]
+data_root_id = ids[5]
+print(id[5])
+# show(column(p, select))
